@@ -14,7 +14,15 @@ extra-source-files:
 ghc-options: -Wall
 
 dependencies:
+  - async
   - base >= 4.9 && < 4.10
+  - bytestring
+  - cpphs
+  - deepseq
+  - extra
+  - filepath
+  - temporary
+  - utf8-string
 
 library:
   source-dirs: src
