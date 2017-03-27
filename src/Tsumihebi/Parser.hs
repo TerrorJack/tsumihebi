@@ -4,6 +4,8 @@
 module Tsumihebi.Parser
     ( identifier
     , integerConstant
+    , characterConstant
+    , stringLiteral
     ) where
 
 import Data.Char
@@ -43,3 +45,21 @@ integerConstant =
             void $ lookAhead $ char '0'
             Lex.octal
     dec = try Lex.integer
+
+characterConstant
+    :: (MonadParsec e s m, Token s ~ Char)
+    => m CharacterConstant
+characterConstant =
+    lexeme "characterConstant" $
+    CharacterConstant <$> do
+        void $ char '\''
+        c <- Lex.charLiteral
+        void $ char '\''
+        pure c
+
+stringLiteral
+    :: (MonadParsec e s m, Token s ~ Char)
+    => m StringLiteral
+stringLiteral =
+    lexeme "stringLiteral" $
+    fmap StringLiteral $ char '"' *> manyTill Lex.charLiteral (char '"')
