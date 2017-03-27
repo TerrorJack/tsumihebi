@@ -22,6 +22,7 @@ dependencies:
   - extra
   - filepath
   - temporary
+  - unordered-containers
   - utf8-string
 
 library:
