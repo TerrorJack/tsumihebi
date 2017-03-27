@@ -21,6 +21,7 @@ dependencies:
   - deepseq
   - extra
   - filepath
+  - megaparsec
   - temporary
   - unordered-containers
   - utf8-string
