@@ -1,6 +1,9 @@
 {-# LANGUAGE OverloadedStrings #-}
 
-module Tsumihebi where
+module Tsumihebi.Preprocessor
+    ( generateFakeHeader
+    , defOpts
+    ) where
 
 import Control.Concurrent.Async
 import Control.DeepSeq
