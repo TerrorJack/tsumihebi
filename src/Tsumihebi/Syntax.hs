@@ -1,7 +1,6 @@
 module Tsumihebi.Syntax
     ( Identifier(..)
     , IntegerConstant(..)
-    , FloatingConstant(..)
     , CharacterConstant(..)
     , StringLiteral(..)
     ) where
@@ -11,11 +10,7 @@ newtype Identifier = Identifier
     }
 
 newtype IntegerConstant = IntegerConstant
-    { getIntegerConstant :: Int
-    }
-
-newtype FloatingConstant = FloatingConstant
-    { getFloatingConstant :: Double
+    { getIntegerConstant :: Integer
     }
 
 newtype CharacterConstant = CharacterConstant
